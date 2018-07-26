@@ -1,13 +1,6 @@
 'use strict';
 
 let filesToCache = [
-  '.',
-  'index.html',
-  'restaurant.html',
-  'css/styles.css',
-  'js/main.js',
-  'js/restaurant_info.js',
-  'data/restaurants.json'
   'img/1.jpg',
   'img/2.jpg',
   'img/3.jpg',
@@ -18,6 +11,13 @@ let filesToCache = [
   'img/8.jpg',
   'img/9.jpg',
   'img/10.jpg',
+  '.',
+  'index.html',
+  'restaurant.html',
+  'css/styles.css',
+  'js/main.js',
+  'js/restaurant_info.js',
+  'data/restaurants.json'
 ]
 
 let constantCacheName = 'info-cache-v1';

@@ -201,6 +201,19 @@ addMarkersToMap = (restaurants = self.restaurants) => {
 
 }
 
+(function() {
+  if (!('serviceWorker' in navigator)) {
+    console.log('This serviceWorker is not supported')
+    return;
+  }
+  navigator.serviceWorker.register('/js/sw.js')
+  .then(function() {
+    console.log('This serviceWorker just registered');
+  }).catch(function(error){
+    console.log('The registration of the serviceWorker just failed: ', error)
+  });
+})();
+
 /* Code for Google Maps -- unused as of yet */
 
 /* addMarkersToMap = (restaurants = self.restaurants) => {
@@ -213,16 +226,3 @@ addMarkersToMap = (restaurants = self.restaurants) => {
     self.markers.push(marker);
   });
 } */
-
-(function() {
-  if (!('serviceWorker' in navigator)) {
-    console.log('This serviceWorker is not supported')
-    return;
-  }
-  navigator.serviceWorker.register('/sw.js')
-  .then(function() {
-    console.log('This serviceWorker just registered');
-  }).catch(function(error){
-    console.log('The registration of the serviceWorker just failed: ', error)
-  });
- })();
