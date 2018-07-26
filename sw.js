@@ -39,7 +39,9 @@ self.addEventListener('activate', function(event) {
     caches.keys().then(function(cacheNames) {
       return Promise.all(
         cacheNames.map(function(cacheName) {
-          
+          if (cacheUniversal.indexOf(cacheName) === -1) {
+            return caches.delete(cacheName);
+          }
         })
       )
     })
