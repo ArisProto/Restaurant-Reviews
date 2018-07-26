@@ -99,9 +99,8 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
   fillReviewsHTML();
 }
 
-/**
- * Create restaurant operating hours HTML table and add it to the webpage.
- */
+/* Create restaurant operating hours HTML table and add it to the webpage. */
+
 fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => {
   const hours = document.getElementById('restaurant-hours');
   for (let key in operatingHours) {
@@ -119,9 +118,8 @@ fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => 
   }
 }
 
-/**
- * Create all reviews HTML and add them to the webpage.
- */
+/* Create all reviews HTML and add them to the webpage. */
+
 fillReviewsHTML = (reviews = self.restaurant.reviews) => {
   const container = document.getElementById('reviews-container');
   const title = document.createElement('h2');
@@ -141,9 +139,8 @@ fillReviewsHTML = (reviews = self.restaurant.reviews) => {
   container.appendChild(ul);
 }
 
-/**
- * Create review HTML and add it to the webpage.
- */
+/* Create review HTML and add it to the webpage.*/
+
 createReviewHTML = (review) => {
   const li = document.createElement('li');
   const name = document.createElement('p');
@@ -165,9 +162,8 @@ createReviewHTML = (review) => {
   return li;
 }
 
-/**
- * Add restaurant name to the breadcrumb navigation menu
- */
+/* Add restaurant name to the breadcrumb navigation menu */
+
 fillBreadcrumb = (restaurant=self.restaurant) => {
   const breadcrumb = document.getElementById('breadcrumb');
   const li = document.createElement('li');
@@ -175,9 +171,8 @@ fillBreadcrumb = (restaurant=self.restaurant) => {
   breadcrumb.appendChild(li);
 }
 
-/**
- * Get a parameter by name from page URL.
- */
+/* Get a parameter by name from page URL. */
+
 getParameterByName = (name, url) => {
   if (!url)
     url = window.location.href;
