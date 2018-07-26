@@ -21,7 +21,6 @@ let filesToCache = [
 ]
 
 let constantCacheName = 'info-cache-v1';
-
 self.addEventListener('install', function(event) {
   console.log('Attempt at installing ServiceWorker');
   event.waitUntil(
@@ -36,4 +35,7 @@ self.addEventListener('activate', function(event) {
   console.log('Activating ServiceWorker!')
 
   const cacheUniversal = [constantCacheName];
+  event.waitUntil(
+    caches.keys().then(function(cacheName))
+  )
 })
