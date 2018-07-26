@@ -103,9 +103,8 @@ initMap = () => {
   updateRestaurants();
 } */
 
-/**
- * Update page and map for current restaurants.
- */
+/* Update page and map for current restaurants.  */
+
 updateRestaurants = () => {
   const cSelect = document.getElementById('cuisines-select');
   const nSelect = document.getElementById('neighborhoods-select');
@@ -126,9 +125,8 @@ updateRestaurants = () => {
   })
 }
 
-/**
- * Clear current restaurants, their HTML and remove their map markers.
- */
+/* Clear current restaurants, their HTML and remove their map markers. */
+
 resetRestaurants = (restaurants) => {
   // Remove all restaurants
   self.restaurants = [];
@@ -143,9 +141,7 @@ resetRestaurants = (restaurants) => {
   self.restaurants = restaurants;
 }
 
-/**
- * Create all restaurants HTML and add them to the webpage.
- */
+/* Create all restaurants HTML and add them to the webpage. */
 fillRestaurantsHTML = (restaurants = self.restaurants) => {
   let  tabIndex = 4;
   const ul = document.getElementById('restaurants-list');
@@ -156,9 +152,8 @@ fillRestaurantsHTML = (restaurants = self.restaurants) => {
   addMarkersToMap();
 }
 
-/**
- * Create restaurant HTML.
- */
+/* Create restaurant HTML. */
+
 createRestaurantHTML = (restaurant) => {
   const li = document.createElement('li');
 
@@ -196,9 +191,7 @@ createRestaurantHTML = (restaurant) => {
   return li
 }
 
-/**
- * Add markers for current restaurants to the map.
- */
+/* Add markers for current restaurants to the map. */
 addMarkersToMap = (restaurants = self.restaurants) => {
   restaurants.forEach(restaurant => {
     // Add marker to the map
@@ -211,6 +204,9 @@ addMarkersToMap = (restaurants = self.restaurants) => {
   });
 
 }
+
+/* Code for Google Maps -- unused as of yet */
+
 /* addMarkersToMap = (restaurants = self.restaurants) => {
   restaurants.forEach(restaurant => {
     // Add marker to the map
