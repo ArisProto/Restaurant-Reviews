@@ -36,6 +36,12 @@ self.addEventListener('activate', function(event) {
 
   const cacheUniversal = [constantCacheName];
   event.waitUntil(
-    caches.keys().then(function(cacheName))
+    caches.keys().then(function(cacheNames) {
+      return Promise.all(
+        cacheNames.map(function(cacheName) {
+          
+        })
+      )
+    })
   )
 })
