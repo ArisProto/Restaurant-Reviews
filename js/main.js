@@ -1,7 +1,7 @@
 let restaurants,
     neighborhoods,
-    cuisines
-var newMap
+    cuisines;
+var newMap;
 var markers = [];
 
 /* Fetch neighborhoods and cuisines as soon as the page is loaded. */
