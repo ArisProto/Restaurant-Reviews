@@ -1,6 +1,6 @@
 let restaurants,
-  neighborhoods,
-  cuisines
+    neighborhoods,
+    cuisines
 var newMap
 var markers = []
 
@@ -147,9 +147,11 @@ resetRestaurants = (restaurants) => {
  * Create all restaurants HTML and add them to the webpage.
  */
 fillRestaurantsHTML = (restaurants = self.restaurants) => {
+  let  tabIndex = 4;
   const ul = document.getElementById('restaurants-list');
   restaurants.forEach(restaurant => {
     ul.append(createRestaurantHTML(restaurant));
+    tabIndex ++;
   });
   addMarkersToMap();
 }
@@ -163,6 +165,10 @@ createRestaurantHTML = (restaurant) => {
   const image = document.createElement('img');
   image.className = 'restaurant-img';
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
+
+  // Add alt text for accessability reasons
+  image.alt=restaurant.alt_text;
+
   li.append(image);
 
   const name = document.createElement('h1');
@@ -178,6 +184,11 @@ createRestaurantHTML = (restaurant) => {
   li.append(address);
 
   const more = document.createElement('a');
+
+  // Accessability feature
+  more.setAttribute('tabindex', tabIndex.toString());
+  more.setAttribute('aria-label', "view details for" + restaurant.name);
+
   more.innerHTML = 'View Details';
   more.href = DBHelper.urlForRestaurant(restaurant);
   li.append(more)
