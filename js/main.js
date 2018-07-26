@@ -13,9 +13,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
   fetchCuisines();
 });
 
-/**
- * Fetch all neighborhoods and set their HTML.
- */
+/* Fetch all neighborhoods and set their HTML. */
+
 fetchNeighborhoods = () => {
   DBHelper.fetchNeighborhoods((error, neighborhoods) => {
     if (error) { // Got an error
@@ -27,9 +26,8 @@ fetchNeighborhoods = () => {
   });
 }
 
-/**
- * Set neighborhoods HTML.
- */
+/* Set neighborhoods HTML. */
+
 fillNeighborhoodsHTML = (neighborhoods = self.neighborhoods) => {
   const select = document.getElementById('neighborhoods-select');
   neighborhoods.forEach(neighborhood => {
@@ -40,9 +38,8 @@ fillNeighborhoodsHTML = (neighborhoods = self.neighborhoods) => {
   });
 }
 
-/**
- * Fetch all cuisines and set their HTML.
- */
+/* Fetch all cuisines and set their HTML. */
+
 fetchCuisines = () => {
   DBHelper.fetchCuisines((error, cuisines) => {
     if (error) { // Got an error!
@@ -54,9 +51,8 @@ fetchCuisines = () => {
   });
 }
 
-/**
- * Set cuisines HTML.
- */
+/* Set cuisines HTML. */
+
 fillCuisinesHTML = (cuisines = self.cuisines) => {
   const select = document.getElementById('cuisines-select');
 
