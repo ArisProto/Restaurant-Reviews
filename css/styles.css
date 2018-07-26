@@ -183,6 +183,7 @@ nav h1 a {
 }
 
 /* ====================== Restaurant Details ====================== */
+
 .inside header {
   position: fixed;
   top: 0;
@@ -191,7 +192,7 @@ nav h1 a {
 }
 .inside #map-container {
   background: blue none repeat scroll 0 0;
-  height: 87%;
+  height: calc(100% - 80px);
   position: fixed;
   right: 0;
   top: 80px;
