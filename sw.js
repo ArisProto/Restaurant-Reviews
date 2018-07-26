@@ -19,3 +19,13 @@ let filesToCache = [
   'img/9.jpg',
   'img/10.jpg',
 ]
+
+let staticCacheName = 'info-cache-v1';
+
+self.addEventListener('install', function(event) {
+  console.log('Attempt at installing ServiceWorker');
+  event.waitUntil(
+    caches.open(staticCacheName)
+    })
+  );
+});
