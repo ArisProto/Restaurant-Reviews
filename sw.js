@@ -26,6 +26,8 @@ self.addEventListener('install', function(event) {
   console.log('Attempt at installing ServiceWorker');
   event.waitUntil(
     caches.open(staticCacheName)
+    .then(function(cache) {
+      return cache.addAll(filesToCache);
     })
   );
 });
