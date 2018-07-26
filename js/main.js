@@ -142,6 +142,7 @@ resetRestaurants = (restaurants) => {
 }
 
 /* Create all restaurants HTML and add them to the webpage. */
+
 fillRestaurantsHTML = (restaurants = self.restaurants) => {
   let  tabIndex = 4;
   const ul = document.getElementById('restaurants-list');
