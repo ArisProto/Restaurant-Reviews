@@ -4,9 +4,8 @@ let restaurants,
 var newMap
 var markers = []
 
-/**
- * Fetch neighborhoods and cuisines as soon as the page is loaded.
- */
+/* Fetch neighborhoods and cuisines as soon as the page is loaded. */
+
 document.addEventListener('DOMContentLoaded', (event) => {
   initMap(); // added
   fetchNeighborhoods();
@@ -214,3 +213,16 @@ addMarkersToMap = (restaurants = self.restaurants) => {
     self.markers.push(marker);
   });
 } */
+
+(function() {
+  if (!('serviceWorker' in navigator)) {
+    console.log('This serviceWorker is not supported')
+    return;
+  }
+  navigator.serviceWorker.register('/sw.js')
+  .then(function() {
+    console.log('This serviceWorker just registered');
+  }).catch(function(error){
+    console.log('The registration of the serviceWorker just failed: ', error)
+  });
+ })();
