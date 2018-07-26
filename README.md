@@ -2,4 +2,6 @@
 
 ## Objective
 
-## How to run
+Project objective was to take an inaccessible unresponsive website and turn it into a handicapped friendly, fluently responsive website that includes caching for offline usage!
+
+## How to use
