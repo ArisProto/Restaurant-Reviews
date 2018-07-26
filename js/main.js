@@ -68,9 +68,8 @@ fillCuisinesHTML = (cuisines = self.cuisines) => {
   });
 }
 
-/**
- * Initialize leaflet map, called from HTML.
- */
+/* Initialize leaflet map, called from HTML. */
+
 initMap = () => {
   self.newMap = L.map('map', {
         center: [40.722216, -73.987501],
@@ -88,6 +87,9 @@ initMap = () => {
 
   updateRestaurants();
 }
+
+/* Code for Google Maps -- unused as of yet */
+
 /* window.initMap = () => {
   let loc = {
     lat: 40.722216,
