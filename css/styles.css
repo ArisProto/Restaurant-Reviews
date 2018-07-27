@@ -343,7 +343,7 @@ header .skip-link:focus {
 /* ====================== Media Queries: 1150px; ====================== */
 @media screen and (min-width: 1150px) {
   #reviews-container {
-    max-width: 1150px;
+    max-width: 100%;
   }
   #reviews-list {
     flex-direction: row;
