@@ -4,6 +4,19 @@ let restaurants,
 var newMap;
 var markers = [];
 
+(function() {
+  if (!('serviceWorker' in navigator)) {
+    console.log('This serviceWorker is not supported');
+    return;
+  }
+  navigator.serviceWorker.register('sw.js')
+  .then(function() {
+    console.log('This serviceWorker just registered');
+  }).catch(function(error){
+    console.log('The registration of the serviceWorker just failed: ', error);
+  });
+})();
+
 /* Fetch neighborhoods and cuisines as soon as the page is loaded. */
 
 document.addEventListener('DOMContentLoaded', (event) => {
@@ -23,7 +36,7 @@ fetchNeighborhoods = () => {
       fillNeighborhoodsHTML();
     }
   });
-}
+};
 
 /* Set neighborhoods HTML. */
 
@@ -35,7 +48,7 @@ fillNeighborhoodsHTML = (neighborhoods = self.neighborhoods) => {
     option.value = neighborhood;
     select.append(option);
   });
-}
+};
 
 /* Fetch all cuisines and set their HTML. */
 
@@ -48,7 +61,7 @@ fetchCuisines = () => {
       fillCuisinesHTML();
     }
   });
-}
+};
 
 /* Set cuisines HTML. */
 
@@ -61,7 +74,7 @@ fillCuisinesHTML = (cuisines = self.cuisines) => {
     option.value = cuisine;
     select.append(option);
   });
-}
+};
 
 /* Initialize leaflet map, called from HTML. */
 
@@ -81,7 +94,7 @@ initMap = () => {
   }).addTo(newMap);
 
   updateRestaurants();
-}
+};
 
 /* Code for Google Maps -- unused as of yet */
 
@@ -200,19 +213,6 @@ addMarkersToMap = (restaurants = self.restaurants) => {
   });
 
 }
-
-(function() {
-  if (!('serviceWorker' in navigator)) {
-    console.log('This serviceWorker is not supported')
-    return;
-  }
-  navigator.serviceWorker.register('sw.js')
-  .then(function() {
-    console.log('This serviceWorker just registered');
-  }).catch(function(error){
-    console.log('The registration of the serviceWorker just failed: ', error)
-  });
-})();
 
 /* Code for Google Maps -- unused as of yet */
 

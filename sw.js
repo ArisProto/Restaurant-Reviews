@@ -17,8 +17,8 @@ let filesToCache = [
   'css/styles.css',
   'js/main.js',
   'js/restaurant_info.js',
-  'data/restaurants.json'
-]
+  'data/restaurants.json',
+];
 
 let constantCacheName = 'info-cache-v1';
 self.addEventListener('install', function(event) {
@@ -48,8 +48,8 @@ self.addEventListener('activate', function(event) {
   );
 });
 
-self.addEventListener('fetchh', function() {
-  console.log('Fetching event for ', event.request.url);
+self.addEventListener('fetch', function(event) {
+  console.log('Fetch event for ', event.request.url);
   event.respondWith(
     caches.match(event.request).then(function(response) {
       if (response) {
