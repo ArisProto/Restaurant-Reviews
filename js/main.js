@@ -158,7 +158,7 @@ createRestaurantHTML = (restaurant, tabIndex) => {
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
 
   // Add alt text for accessability reasons
-  image.alt=restaurant.alt_text;
+  image.alt = 'Image of ' + restaurant.name;
 
   li.append(image);
 
