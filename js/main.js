@@ -4,18 +4,16 @@ let restaurants,
 var newMap;
 var markers = [];
 
-(function() {
-  if (!('serviceWorker' in navigator)) {
-    console.log('This serviceWorker is not supported');
-    return;
-  }
-  navigator.serviceWorker.register('sw.js')
-  .then(function() {
-    console.log('This serviceWorker just registered');
-  }).catch(function(error){
-    console.log('The registration of the serviceWorker just failed: ', error);
-  });
-})();
+/* Registering Service Worker */
+
+if (navigator.serviceWorker) {
+  navigator.serviceWorker.register('./service_worker.js')
+    .then(function() {
+      console.log('Service Worker registered');
+    }).catch(function() {
+      console.log('Failed to register Service Worker');
+    });
+}
 
 /* Fetch neighborhoods and cuisines as soon as the page is loaded. */
 
