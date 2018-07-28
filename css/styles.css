@@ -270,7 +270,6 @@ header .skip-link:focus {
   border-bottom: 1px solid #d9d9d9;
   border-top: 1px solid #fff;
 	padding: 15px 3%;
-  width: 100%;
   max-width: 560px;
   display: flex;
   flex-direction: column;
